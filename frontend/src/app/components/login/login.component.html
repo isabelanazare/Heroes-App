@@ -1,0 +1,22 @@
+<div id="login-title"> Login </div>
+<div class="login-container">
+    <form [formGroup]="getCheckoutForm()" (ngSubmit)="login()">
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                formControlName="email">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+        </div>
+        <div class="login-form-buttons">
+            <button type="submit" id="enter-button" class="btn btn-primary">enter</button>
+            <button type="text" class="btn btn-primary"><a routerLink="/register">register</a></button>
+        </div>
+        <p id="reset-password-link"><a routerLink="/resetPassword">Reset
+                password</a></p>
+    </form>
+</div>

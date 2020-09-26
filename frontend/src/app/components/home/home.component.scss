@@ -1,0 +1,40 @@
+.charts-container{
+    display: flex;
+    justify-content: space-around;
+  }
+
+.chart-area canvas {
+    display: block;
+    width: 70%;
+    height: 30%;
+}
+  
+.heroes-chart{
+  flex: 0 0 45em;
+}
+
+.powers-chart{
+  flex: 0 0 50em;
+  width: 70%;
+  height: 30%;
+}
+
+.powers-chart {
+  height: 500px;
+}
+
+@media screen and (max-width: 600px) {
+  .charts-container{
+    display: block;
+  }
+
+  .heroes-chart {
+    width:230px;
+    height:500px;
+  }
+
+  .powers-chart {
+    width:330px;
+    height:200px;
+  }
+}

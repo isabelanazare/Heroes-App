@@ -1,0 +1,6 @@
+<input type="file" #inputElement placeholder="Choose file" (change)="uploadFile(inputElement.files)" id="input-element">
+
+<div class="upload-section">
+    <p><button id="upload-button" type="button" (click)="inputElement.click()" class="btn btn-outline-primary">
+        Choose image</button></p>
+    <div id="filename"> {{fileName}} </div>

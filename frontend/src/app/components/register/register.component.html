@@ -1,0 +1,32 @@
+<div id="register-title"> Register </div>
+<div class="register-container">
+    <form [formGroup]="getCheckoutForm()" (ngSubmit)="onCreate()">
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Username:</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                formControlName="username">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                formControlName="email">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+        </div>
+        
+        <div class="form-group">
+            <label for="exampleInputPassword1">Confirm password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" formControlName="confirmedPassword">
+        </div>
+
+        <div class="register-form-buttons">
+            <button type="submit" id="create-button" class="btn btn-primary">Create</button>
+            <button type="text" class="btn btn-primary"><a routerLink="/"> Go back</a> </button>
+        </div>
+    </form>
+</div>

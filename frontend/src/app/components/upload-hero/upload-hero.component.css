@@ -1,0 +1,26 @@
+.uploadResult{
+    font-weight:bold;
+    color:#28a745;
+    margin-left: 15px;
+    line-height: 36px;
+}
+
+
+#upload-button {
+    margin-top: 10px;
+    padding-bottom:30px;
+    height: 30px;
+}
+
+.upload-section {
+    display: flex;
+}
+
+#filename {
+    margin-left:13px;
+    margin-top: 17px;
+}
+
+#input-element {
+    display:none
+}

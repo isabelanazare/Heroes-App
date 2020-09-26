@@ -1,0 +1,114 @@
+<div class="heroes-header">
+  <div id="heroes-title">Heroes</div>
+  <div class="heroes-container">
+    <button (click)="openModal(addModal)" id="addButton" type="button" class="modal-button">ADD</button>
+    <button type="button" class="btn btn-primary" (click)="openModal(editModal); selectHero()"
+      id="editButton">EDIT</button>
+    <button (click)="exportDataAsCsv()" id="exportButton" type="button" id="exportButton">EXPORT</button>
+  </div>
+</div>
+
+<ag-grid-angular #agGrid class="ag-theme-alpine" [gridOptions]="gridOptions" [modules]="modules"
+  [rowData]="getHeroesArray()" [rowClassRules]="this.gridOptions.rowClassRules" [columnDefs]="columnDefs" id="grid">
+</ag-grid-angular>
+
+
+<ng-template #addModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left"> Add Hero </h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="getCheckoutForm()" (ngSubmit)="addHero()">
+
+      Name:
+      <input type="text" class="form-control" formControlName="name">
+
+      Main Power:
+      <div class="col-auto my-1">
+        <select formControlName="mainPower" class="custom-select mr-sm-2">
+          <option value="{{power.name}}" *ngFor="let power of getPowersArray()">{{ power.name }}</option>
+        </select>
+      </div>
+
+      Ally:
+      <div class="col-auto my-1">
+        <select formControlName="ally" class="custom-select mr-sm-2">
+          <option value="{{hero.name}}" *ngFor="let hero of getHeroesArray()">{{ hero.name }}</option>
+        </select>
+      </div>
+
+      Type:
+      <div class="col-auto my-1">
+        <select formControlName="type" class="custom-select mr-sm-2">
+          <option value="{{heroType.name}}" *ngFor="let heroType of getHeroTypes()">{{ heroType.name }}</option>
+        </select>
+      </div>
+
+      Birthday:
+      <input type="date" class="form-control" formControlName="birthday">
+
+      Other powers:
+      <select formControlName="powers" class="custom-select" multiple>
+        <option value="{{power.name}}" *ngFor="let power of getPowersArray()">{{ power.name }}</option>
+      </select>
+
+      <div class="modal-form-buttons">
+        <button type="submit" id="saveButton" class="modal-button">Save</button>
+      </div>
+    </form>
+  </div>
+</ng-template>
+
+<ng-template #editModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left"> Edit Hero </h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="getCheckoutForm()" (ngSubmit)="editHero()">
+
+      Name:
+      <input type="text" class="form-control" formControlName="name">
+
+      Main Power:
+      <div class="col-auto my-1">
+        <select formControlName="mainPower" class="custom-select mr-sm-2">
+          <option value="{{power.name}}" *ngFor="let power of getPowersArray()">{{ power.name }}</option>
+        </select>
+      </div>
+
+      Ally:
+      <div class="col-auto my-1">
+        <select formControlName="ally" class="custom-select mr-sm-2">
+          <option value="{{hero.name}}" *ngFor="let hero of getHeroesArray()">{{ hero.name }}</option>
+        </select>
+      </div>
+
+      Type:
+      <div class="col-auto my-1">
+        <select formControlName="type" class="custom-select mr-sm-2">
+          <option value="{{heroType.name}}" *ngFor="let heroType of getHeroTypes()">{{ heroType.name }}</option>
+        </select>
+      </div>
+
+      Birthday:
+      <input type="date" class="form-control" formControlName="birthday">
+
+      Other powers:
+      <select formControlName="powers" class="custom-select" multiple>
+        <option value="{{power.name}}" *ngFor="let power of getPowersArray()">{{ power.name }}</option>
+      </select>
+
+      <app-upload-hero (onUploadFinished)="uploadFinished($event)" [selectedHeroId]="currentHeroId"></app-upload-hero>
+
+      <div class="modal-form-buttons">
+        <button type="submit" id="saveButton" class="modal-button">Save</button>
+      </div>
+    </form>
+  </div>
+</ng-template>

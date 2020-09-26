@@ -1,0 +1,21 @@
+<app-header></app-header>
+<div class="main-area-container">
+    <div class="flex-grid">
+        <aside class="my-col my-sidebar">
+            <nav class="my-sidenav">
+                <div class="my-nav-row">
+                    <a routerLink="/main/home"> Home </a>
+                </div>
+                <div class="my-nav-row">
+                    <a routerLink="/main/heroes"> Heroes </a>
+                </div>
+                <div class="my-nav-row">
+                    <a routerLink="/main/powers"> Powers </a>
+                </div>
+            </nav>
+        </aside>
+        <section class="my-col main-area-content">
+            <router-outlet></router-outlet>
+        </section>
+    </div>
+</div>

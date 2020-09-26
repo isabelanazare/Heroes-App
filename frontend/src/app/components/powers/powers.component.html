@@ -1,0 +1,80 @@
+<div class="powers-header">
+  <div id="powers-title">Powers</div>
+  <div class="powers-container">
+    <button (click)="openModal(addModal)" id="addButton">ADD</button>
+    <button (click)="openModal(editModal)" id="editButton">EDIT</button>
+    <button (click)="exportDataAsCsv()" id="exportButton">EXPORT</button>
+  </div>
+</div>
+
+<ag-grid-angular #agGrid id="grid" class="ag-theme-alpine" [gridOptions]="gridOptions" [rowData]="getPowersArray()"
+  [columnDefs]="columnDefs">
+</ag-grid-angular>
+
+<ng-template #addModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left"> Add Power</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="getCheckoutForm()" (ngSubmit)="addPower(getCheckoutForm().value)">
+      Name:
+      <input type="text" class="form-control" formControlName="name">
+      Trait:
+      <input type="text" class="form-control" formControlName="mainTrait">
+      Strength:
+      <input type="text" class="form-control" formControlName="strength">
+
+      Element:
+      <div class="col-auto my-1">
+        <select formControlName="element" class="custom-select mr-sm-2">
+          <option value="Fire">Fire</option>
+          <option value="Earth">Earth</option>
+          <option value="Water">Water</option>
+          <option value="Air"> Air</option>
+        </select>
+      </div>
+
+      Details:
+      <input type="text" class="form-control" formControlName="details">
+      <button type="submit" id="saveButton" class="modal-button">Save</button>
+    </form>
+  </div>
+</ng-template>
+
+<ng-template #editModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Edit Power</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="getCheckoutForm()" (ngSubmit)="editPower(getCheckoutForm().value)">
+      Name:
+      <input type="text" class="form-control" formControlName="name">
+      Trait:
+      <input type="text" class="form-control" formControlName="mainTrait">
+      Strength:
+      <input type="text" class="form-control" formControlName="strength">
+
+      Element:
+      <div class="col-auto my-1">
+        <select formControlName="element" class="custom-select mr-sm-2">
+          <option value="Fire">Fire</option>
+          <option value="Earth">Earth</option>
+          <option value="Water">Water</option>
+          <option value="Air"> Air</option>
+        </select>
+      </div>
+
+      Details:
+      <input type="text" class="form-control" formControlName="details">
+      <div class="power-form-buttons">
+        <button type="submit" id="saveButton" class="modal-button">Save</button>
+      </div>
+    </form>
+  </div>
+</ng-template>

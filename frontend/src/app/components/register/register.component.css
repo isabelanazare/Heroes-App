@@ -1,0 +1,61 @@
+.register-container {
+    background-color:white;
+    height:100%;
+    font-family:'Roboto';
+    border-radius: 10px;
+    margin: auto;
+    width:27%;}
+
+#register-title {
+    font-family: 'Open Sans';
+    font-size:20px;
+    font-weight: bold;
+    padding-bottom:13px;
+    text-align: center;
+    padding-bottom:25px;
+}
+
+.form-label {
+    font-family: 'Open Sans';
+    font-size:18px;
+    padding-top:10px;
+    padding-left:10px;
+}
+
+label {
+    margin-left:10px;
+}
+
+input {
+    margin-left:10px;
+}
+
+.register-form-buttons {
+    display: flex;
+}
+
+button a {
+    font-family: 'Open Sans';
+    text-decoration: none;
+    color: white;
+}
+
+button {
+    margin-left:10px;
+    margin-bottom:20px;
+}
+
+.form-group {
+    width: 93%;
+}
+
+#create-button {
+    font-family: 'Open Sans';
+}
+
+
+@media screen and (max-width: 600px) {
+    .register-container{
+        width:100%;
+    }
+  }

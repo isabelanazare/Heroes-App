@@ -1,0 +1,16 @@
+<div class="header">
+    <div class="header-container">
+        <div id="page-title">
+            Fabrit Heroes
+        </div>
+        <div class="user-info" *ngIf="user">
+            <img [src]="createImgPath(user.imgPath)" alt="profile picture" class="dot">
+            <div id="email-address">
+                {{user.username}}
+            </div>
+            <button id="myProfileButton" class="btn btn-primary"><a routerLink="myProfile">Profile</a></button>
+            <button (click)="logOut()" class="btn btn-primary" id="logOutButton">Log out</button>
+        </div>
+        <button id="logInButton" *ngIf="!user"> <a routerLink="/">Login</a> </button>
+    </div>
+</div>

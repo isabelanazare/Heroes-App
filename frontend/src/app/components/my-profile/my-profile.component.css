@@ -1,0 +1,61 @@
+.my-profile-container {
+    background-color:whitesmoke;
+    height:410px;
+    font-family:'Roboto';
+    border-radius: 7px;
+    width: 50%;
+    margin-top:7px;
+}
+
+#my-profile-title {
+    font-family: 'Open Sans';
+    font-size:20px;
+    font-weight: bold;
+    padding-bottom:13px;
+    padding-bottom:25px;
+    padding-left:10px;
+    padding-top:10px;
+}
+
+.form-label {
+    font-family: 'Open Sans';
+    font-size:18px;
+    padding-top:20px;
+    padding-left:10px;
+    padding-bottom:10px;
+}
+
+label {
+    margin-top:20px;
+    margin-left:10px;
+}
+
+input {
+    margin-left:10px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+#update-button {
+    margin-left:10px;
+    margin-bottom:5px;
+    margin-top:7px
+}
+
+#reset-button {
+    margin-left:10px;
+}
+
+.form-group {
+    width: 90%;
+}
+
+.my-profile-form-buttons {
+    display: flex;
+}
+
+@media screen and (max-width: 600px) {
+    .my-profile-container {
+        width:100%;
+    }
+  }
